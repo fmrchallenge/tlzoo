@@ -14,7 +14,11 @@ readers can find proofs etc.
 Participating
 -------------
 
-For details, please read CONTRIBUTING.md.
+To report errors, to propose changes to existing entries, or to suggest the
+addition of new material, please use the issue tracker at
+<https://github.com/fmrchallenge/tlzoo/issues>.
+
+More details about contributing material are in CONTRIBUTING.md.
 
 
 License
