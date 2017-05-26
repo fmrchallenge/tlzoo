@@ -10,6 +10,11 @@ languages. Each listing must have the first (known) paper that introduced the
 specification language, and it must have citations for each property, where
 readers can find proofs etc.
 
+The scope for inclusion is potential applicability in robotics and, in general,
+hybrid systems. Note that specification languages developed for concurrent
+systems and other settings classically treated in the formal verification
+literature are still in scope.
+
 
 Participating
 -------------
