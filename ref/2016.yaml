@@ -1,0 +1,16 @@
+d6a38902-18ae-4de1-bcfa-ce6af34a62f3:
+  title: Safe Control under Uncertainty with Probabilistic Signal Temporal Logic
+  authors:
+  - Dorsa Sadigh
+  - Ashish Kapoor
+  year: 2016
+  month: 6
+  type: conference paper
+  booktitle: "Proceedings of Robotics: Science and Systems"
+  doi: 10.15607/RSS.2016.XII.017
+  url:
+  - http://www.roboticsproceedings.org/rss12/p17.html
+  keywords:
+  - PrSTL
+  - Probabilistic Signal Temporal Logic
+  status: first  # paper that first defines PrSTL
