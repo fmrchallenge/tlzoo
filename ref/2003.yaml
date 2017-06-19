@@ -1,0 +1,17 @@
+99247baa-184a-4084-bcef-fd65bb527335:
+  title: Efficient Model Checking of Safety Properties
+  authors:
+  - Timo Latvala
+  year: 2003
+  month: 5
+  type: conference paper
+  booktitle: Proceedings of the 10th SPIN Workshop
+  url:
+  - http://spinroot.com/spin/Workshops/ws03/Latvala.pdf
+  - http://spinroot.com/spin/Workshops/ws03/program2003.html
+  - http://www.tcs.hut.fi/~timo/scheck/
+  keywords:
+  - tool
+  - scLTL
+  - scheck
+  status: algorithm
