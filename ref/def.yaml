@@ -1,0 +1,19 @@
+f5885e03-e2e4-41ac-a741-f7fd552e2d7f:
+  type: alias
+  value:
+  - scLTL
+  - syntactically cosafe LTL
+  - syntactically co-safe LTL
+
+f16b4506-42fa-44b3-8d8e-2e76c2bb45e6:
+  type: alias
+  value:
+  - LTL
+  - linear temporal logic
+  - linear-time temporal logic
+
+4c333632-ea1c-45f9-9fea-1f63a46c0da2:
+  type: alias
+  value:
+  - CTL
+  - computation tree logic
