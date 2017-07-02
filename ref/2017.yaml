@@ -1,0 +1,15 @@
+d2b29caf-3eb1-4e5b-88be-fe16d929d68a:
+  title: Provably-Correct Coordination of Large Collections of Agents with Counting Temporal Logic Constraints
+  authors:
+  - Yunus Emre Sahin
+  - Petter Nilsson
+  - Necmiye Ozay
+  year: 2017
+  month: 4
+  type: conference paper
+  booktitle: ICCPS
+  doi: 10.1145/3055004.3055021
+  keywords:
+  - counting linear temporal logic
+  - counting LTL
+  status: first
