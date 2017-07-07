@@ -50,12 +50,26 @@ def print_bibtex(entries):
                       BOOKTITLE=entry['booktitle']
                   ))
             print()
+        elif entry['type'] == 'article':
+            print('@article{{{KEY},\n'
+                  '  title = {{{TITLE}}},\n'
+                  '  author = {{{AUTHORS}}},\n'
+                  '  year = {{{YEAR}}},\n'
+                  '  journal = {{{JOURNAL}}},\n'
+                  '}}'.format(
+                      KEY=key,
+                      TITLE=entry['title'],
+                      AUTHORS=' AND '.join(entry['authors']),
+                      YEAR=entry['year'],
+                      JOURNAL=entry['journal']
+                  ))
+            print()
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(prog='panbib')
     parser.add_argument('-t', '--type', metavar='TYPE', action='store',
-                        dest='out_format',
+                        dest='out_format', default='bibtex',
                         help='output format; support formats: bibtex')
     args = parser.parse_args()
 
