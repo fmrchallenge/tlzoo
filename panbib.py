@@ -53,7 +53,7 @@ def print_bibtex(entries):
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(prog='gr1py')
+    parser = argparse.ArgumentParser(prog='panbib')
     parser.add_argument('-t', '--type', metavar='TYPE', action='store',
                         dest='out_format',
                         help='output format; support formats: bibtex')
