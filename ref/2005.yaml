@@ -1,0 +1,17 @@
+82c3f106-dd78-4500-aece-b059ff31b3f6:
+  title: Bridging the gap between fair simulation and trace inclusion
+  authors:
+  - Yonit Kesten
+  - Nir Piterman
+  - Amir Pnueli
+  year: 2005
+  type: article
+  journal: Information and Computation
+  volume: 200
+  pages: 35--61
+  doi: 10.1016/j.ic.2005.01.006
+  keywords:
+  - GR(1)
+  - Generalized Reactivity(1)
+  - generalized Streett[1]
+  status: first
