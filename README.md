@@ -16,6 +16,14 @@ systems and other settings classically treated in the formal verification
 literature are still in scope.
 
 
+Organization
+------------
+
+There are two main parts to this repository: the collection of YAML files that
+stores all data about specification languages, and scripts for deploying a
+website that hosts search-able access to these data.
+
+
 Participating
 -------------
 
