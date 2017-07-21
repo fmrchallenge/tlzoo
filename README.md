@@ -1,6 +1,8 @@
 The Specification Language Zoo
 ------------------------------
 
+The site is deployed at https://tlzoo.party
+
 The ambition of this repository is to concisely document all specification
 languages and their relationships as presented in published papers. It aspires
 to be a comprehensive listing of specification languages that have been
