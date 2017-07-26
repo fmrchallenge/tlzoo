@@ -1,7 +1,4 @@
 site_name: tlzoo
-pages:
-- Home: index.md
-- Contributing: CONTRIBUTING.md
 
 theme: mkdocs
 theme_dir: tlzoo_theme
