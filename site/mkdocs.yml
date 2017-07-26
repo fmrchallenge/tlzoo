@@ -4,3 +4,4 @@ pages:
 - Contributing: CONTRIBUTING.md
 
 theme: mkdocs
+theme_dir: tlzoo_theme
