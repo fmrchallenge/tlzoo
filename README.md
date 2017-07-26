@@ -33,7 +33,7 @@ To report errors, to propose changes to existing entries, or to suggest the
 addition of new material, please use the issue tracker at
 <https://github.com/fmrchallenge/tlzoo/issues>.
 
-More details about contributing material are in CONTRIBUTING.md.
+More details about contributing material are in [contributing](CONTRIBUTING.md).
 
 
 License
@@ -41,5 +41,5 @@ License
 
 This work is released under the Creative Commons Attribution 4.0 International
 License. To get a copy of this license, visit
-https://creativecommons.org/licenses/by/4.0/
+<https://creativecommons.org/licenses/by/4.0/>
 or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
