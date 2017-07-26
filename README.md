@@ -42,8 +42,8 @@ Building the website
 --------------------
 
 Python is required. The two primary dependencies are [MkDocs](
-http://www.mkdocs.org/) and [PyYAML](http://pyyaml.org/wiki/PyYAML). To install
-them, try
+http://www.mkdocs.org/) and [PyYAML](http://pyyaml.org/wiki/PyYAML).
+To install them, try
 
     pip install pyyaml mkdocs
 
