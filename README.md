@@ -21,9 +21,11 @@ literature are still in scope.
 Organization
 ------------
 
-There are two main parts to this repository: the collection of YAML files that
-stores all data about specification languages, and scripts for deploying a
-website that hosts search-able access to these data.
+There are two main parts to this repository: the collection of [YAML](
+http://yaml.org/) files that stores all data about specification languages, and
+scripts for deploying a website that hosts search-able access to these data.
+Building the site is described below. Note that contributing new entries does
+not require capability to build and deploy the website.
 
 
 Participating
@@ -34,6 +36,16 @@ addition of new material, please use the issue tracker at
 <https://github.com/fmrchallenge/tlzoo/issues>.
 
 More details about contributing material are in [contributing](CONTRIBUTING.md).
+
+
+Building the website
+--------------------
+
+Python is required. The two primary dependencies are [MkDocs](
+http://www.mkdocs.org/) and [PyYAML](http://pyyaml.org/wiki/PyYAML). To install
+them, try
+
+    pip install pyyaml mkdocs
 
 
 License
