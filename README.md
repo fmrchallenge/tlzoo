@@ -53,7 +53,9 @@ Now, to build the website content,
     ./build.sh
 
 The output will be placed under the directory site/site/. It can be served using
-any static web hosting service.
+any static web hosting service. During development, a locally hosted view can be
+obtained by running `./build.sh serve` and directing your web browser to
+http://127.0.0.1:8000
 
 
 License
