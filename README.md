@@ -41,11 +41,19 @@ More details about contributing material are in [contributing](CONTRIBUTING.md).
 Building the website
 --------------------
 
-Python is required. The two primary dependencies are [MkDocs](
-http://www.mkdocs.org/) and [PyYAML](http://pyyaml.org/wiki/PyYAML).
+Python is required. Everything in known to work on GNU/Linux. Testers and
+contributors for other platforms are welcome! The two primary dependencies are
+[MkDocs]( http://www.mkdocs.org/) and [PyYAML](http://pyyaml.org/wiki/PyYAML).
 To install them, try
 
     pip install pyyaml mkdocs
+
+Now, to build the website content,
+
+    ./build.sh
+
+The output will be placed under the directory site/site/. It can be served using
+any static web hosting service.
 
 
 License
