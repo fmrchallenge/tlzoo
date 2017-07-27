@@ -1,19 +1,33 @@
+## NOTES:
+##
+## The canonical name (key `name`) should be the name most widely used
+## in the literature.  Because this may be difficult to assess
+## reliably for a given specification language, it is also acceptable
+## to use an abbreviation that is easily (arguably) recognized.
+##
+## The first alias, if it exists, is used as the verbose form of the
+## specification language. E.g., the entry for LTL has `name: LTL` and
+## the first item in its `alias` list is `linear-time temporal logic`.
+## Thus, it is rendered in the website as LTL (linear-time temporal logic).
+
 f5885e03-e2e4-41ac-a741-f7fd552e2d7f:
-  type: alias
-  value:
-  - scLTL
+  name: scLTL
+  alias:
   - syntactically cosafe LTL
   - syntactically co-safe LTL
 
 f16b4506-42fa-44b3-8d8e-2e76c2bb45e6:
-  type: alias
-  value:
-  - LTL
-  - linear temporal logic
+  name: LTL
+  alias:
   - linear-time temporal logic
+  - linear temporal logic
 
 4c333632-ea1c-45f9-9fea-1f63a46c0da2:
-  type: alias
-  value:
-  - CTL
+  name: CTL
+  alias:
   - computation tree logic
+
+a9bc80b1-dc04-4113-926d-91a29cd372db:
+  name: PrSTL
+  alias:
+  - Probabilistic Signal Temporal Logic
