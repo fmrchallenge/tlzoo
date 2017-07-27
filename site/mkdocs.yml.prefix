@@ -1,4 +1,4 @@
-site_name: tlzoo
+site_name: The Specification Language Zoo
 
 theme: mkdocs
 theme_dir: tlzoo_theme
