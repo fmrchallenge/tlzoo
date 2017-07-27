@@ -2,3 +2,7 @@ site_name: tlzoo
 
 theme: mkdocs
 theme_dir: tlzoo_theme
+
+pages:
+- home: index.md
+- contributing: CONTRIBUTING.md
