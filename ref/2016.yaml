@@ -14,4 +14,6 @@ d6a38902-18ae-4de1-bcfa-ce6af34a62f3:
   keywords:
   - PrSTL
   - Probabilistic Signal Temporal Logic
+  spc_lang:
+  - PrSTL
   status: first  # paper that first defines PrSTL
