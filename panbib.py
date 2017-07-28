@@ -17,17 +17,23 @@ def find_db():
     ref_path = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'ref')
     return glob.glob(os.path.join(ref_path, '*.yaml'))
 
-def flatten_year_files(paths):
-    entries = dict()
+def parse_db(paths):
+    paper_entries = dict()
+    spc_entries = dict()
+
     for path in paths:
+        if os.path.basename(path) == 'def.yaml':
+            with open(path) as fp:
+                spc_entries = yaml.load(fp)
+            continue
         try:
             int(os.path.basename(path).split('.')[0])
         except ValueError:
             continue
         with open(path) as fp:
             incoming = yaml.load(fp)
-        entries.update(incoming)
-    return entries
+        paper_entries.update(incoming)
+    return spc_entries, paper_entries
 
 def generate_bibtex(entry, key=None):
     monthtext = ['January', 'February', 'March', 'April', 'May',
@@ -67,30 +73,50 @@ def print_bibtex_list(entries):
         print(generate_bibtex(entry, key=key))
         print()  # Blank line
 
-def generate_tlzoo_tree(entries):
+def generate_tlzoo_tree(spc_entries, paper_entries):
     """
 
     Output files are placed under the directory site/docs/
     """
-    title_mapping = list(entries.keys())
-    title_mapping.sort(key=(lambda x: entries[x]['title']))
     with open(os.path.join('site', 'mkdocs.yml'), 'w') as fp:
         with open(os.path.join('site', 'mkdocs.yml.prefix')) as fp_prefix:
             fp.write(fp_prefix.read())
+
+        title_mapping = list(spc_entries.keys())
+        title_mapping.sort(key=(lambda x: spc_entries[x]['name']))
+        fp.write('- specification languages:\n')
+        for key in title_mapping:
+            fp.write('  - "{NAME}": spc/{KEY}.md\n'.format(
+                NAME=spc_entries[key]['name'],
+                KEY=key
+            ))
+
+        title_mapping = list(paper_entries.keys())
+        title_mapping.sort(key=(lambda x: paper_entries[x]['title']))
         fp.write('- papers:\n')
         for key in title_mapping:
             fp.write('  - "{TITLE}": papers/{KEY}.md\n'.format(
-                TITLE=entries[key]['title'],
+                TITLE=paper_entries[key]['title'],
                 KEY=key
             ))
 
     docs_dir = os.path.join('site', 'docs')
+    spc_dir = os.path.join(docs_dir, 'spc')
     papers_dir = os.path.join(docs_dir, 'papers')
     if not os.path.exists(docs_dir):
         os.mkdir(docs_dir)
+    if not os.path.exists(spc_dir):
+        os.mkdir(spc_dir)
     if not os.path.exists(papers_dir):
         os.mkdir(papers_dir)
-    for key, entry in entries.items():
+
+    for key, entry in spc_entries.items():
+        with open(os.path.join(spc_dir, key+'.md'), 'w') as fp:
+            fp.write('''## {NAME}
+'''.format(NAME=entry['name'])
+                     )
+
+    for key, entry in paper_entries.items():
         with open(os.path.join(papers_dir, key+'.md'), 'w') as fp:
             if entry['type'] == 'conference paper':
                 venue = entry['booktitle']
@@ -138,12 +164,12 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     db_files = find_db()
-    entries = flatten_year_files(db_files)
+    spc_entries, paper_entries = parse_db(db_files)
 
     target_format = args.out_format.lower()
     if target_format == 'bibtex':
-        print_bibtex_list(entries)
+        print_bibtex_list(paper_entries)
     elif target_format == 'tlzoo':
-        generate_tlzoo_tree(entries)
+        generate_tlzoo_tree(spc_entries, paper_entries)
     else:
         pass
