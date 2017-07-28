@@ -131,6 +131,7 @@ def generate_tlzoo_tree(spc_entries, paper_entries):
 **venue:** {VENUE}
 
 **date:** {DATE}
+
 '''.format(TITLE=entry['title'],
            AUTHORS=', '.join(entry['authors']),
            VENUE=venue,
