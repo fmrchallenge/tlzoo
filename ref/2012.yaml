@@ -14,8 +14,8 @@
   month: 5
   pages: 911--938
   doi: 10.1016/j.jcss.2011.08.007
+  spc_lang:
+  - 44990ab8-4bc2-4025-9187-27905a9895bd
   keywords:
-  - GR(1)
-  - Generalized Reactivity(1)
   - synthesis
   status: algorithm

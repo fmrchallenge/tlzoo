@@ -31,3 +31,14 @@ a9bc80b1-dc04-4113-926d-91a29cd372db:
   name: PrSTL
   alias:
   - Probabilistic Signal Temporal Logic
+
+70170676-2a9c-4eb9-a09b-66677bd72c91:
+  name: counting LTL
+  alias:
+  - counting linear temporal logic
+
+44990ab8-4bc2-4025-9187-27905a9895bd:
+  name: GR(1)
+  alias:
+  - Generalized Reactivity(1)
+  - generalized Streett[1]

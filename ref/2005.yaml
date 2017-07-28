@@ -10,8 +10,6 @@
   volume: 200
   pages: 35--61
   doi: 10.1016/j.ic.2005.01.006
-  keywords:
-  - GR(1)
-  - Generalized Reactivity(1)
-  - generalized Streett[1]
+  spc_lang:
+  - 44990ab8-4bc2-4025-9187-27905a9895bd
   status: first
