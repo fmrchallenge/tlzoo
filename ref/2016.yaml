@@ -11,9 +11,6 @@ d6a38902-18ae-4de1-bcfa-ce6af34a62f3:
   url:
   - http://www.roboticsproceedings.org/rss12/p17.pdf
   - http://www.roboticsproceedings.org/rss12/p17.html
-  keywords:
-  - PrSTL
-  - Probabilistic Signal Temporal Logic
   spc_lang:
   - a9bc80b1-dc04-4113-926d-91a29cd372db  # PrSTL
   status: first  # paper that first defines PrSTL
