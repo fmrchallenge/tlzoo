@@ -179,7 +179,7 @@ def generate_tlzoo_tree(spc_entries, paper_entries):
             fp.write('\n\n')
 
             fp.write('### BibTeX\n<pre>\n')
-            fp.write(generate_bibtex(entry))
+            fp.write(generate_bibtex(entry, key))
             fp.write('</pre>\n')
 
 
