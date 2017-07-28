@@ -15,5 +15,5 @@
   - scLTL
   - scheck
   spc_lang:
-  - scLTL
+  - f5885e03-e2e4-41ac-a741-f7fd552e2d7f  # scLTL
   status: algorithm
