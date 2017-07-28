@@ -113,8 +113,26 @@ def generate_tlzoo_tree(spc_entries, paper_entries):
     for key, entry in spc_entries.items():
         with open(os.path.join(spc_dir, key+'.md'), 'w') as fp:
             fp.write('''## {NAME}
-'''.format(NAME=entry['name'])
+
+{VERBOSE_NAME}
+
+'''.format(NAME=entry['name'],
+           VERBOSE_NAME=(entry['alias'][0] if 'alias' in entry else entry['name']))
                      )
+
+            if ('alias' in entry) and len(entry['alias']) >= 2:
+                fp.write('Also known as:\n\n')
+                fp.write('* '+'* '.join(entry['alias'][1:]))
+                fp.write('\n\n')
+
+            fp.write('### papers\n\n')
+            this_papers = [pkey for (pkey, pentry) in paper_entries.items()
+                           if key in pentry['spc_lang']]
+            for pkey in this_papers:
+                fp.write('* ['+paper_entries[pkey]['title']
+                         +'](/papers/'+pkey+'.md)'
+                         +' ('+str(paper_entries[pkey]['year'])+')\n')
+                
 
     for key, entry in paper_entries.items():
         with open(os.path.join(papers_dir, key+'.md'), 'w') as fp:
@@ -137,6 +155,14 @@ def generate_tlzoo_tree(spc_entries, paper_entries):
            VENUE=venue,
            DATE=entry['year'])
                      )
+
+            fp.write('### specification languages\n\n')
+            spc_langs = list()
+            for spc_lang in entry['spc_lang']:
+                spc_langs.append('* ['+spc_entries[spc_lang]['name']
+                                 +'](/spc/'+spc_lang+'.md)')
+            fp.writelines(spc_langs)
+            fp.write('\n\n')
 
             fp.write('### keywords\n\n')
             if ('keywords' in entry) and len(entry['keywords']) > 0:
