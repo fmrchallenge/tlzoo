@@ -42,3 +42,8 @@ a9bc80b1-dc04-4113-926d-91a29cd372db:
   alias:
   - Generalized Reactivity(1)
   - generalized Streett[1]
+
+b66e1782-3bab-4e4c-a77f-865b9870afc7:
+  name: MTL
+  alias:
+  - Metric Temporal Logic
