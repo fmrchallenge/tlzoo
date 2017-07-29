@@ -172,8 +172,13 @@ def generate_tlzoo_tree(spc_entries, paper_entries):
             fp.write('\n\n')
 
             fp.write('### URL\n\n')
+            url_list = []
             if ('url' in entry) and len(entry['url']) > 0:
-                fp.write('\n'.join(['* <'+url+'>' for url in entry['url']]))
+                url_list.extend(['* <'+url+'>\n' for url in entry['url']])
+            if 'doi' in entry:
+                url_list.append('* <http://dx.doi.org/'+entry['doi']+'> (auto-generated link)\n')
+            if len(url_list) > 0:
+                fp.writelines(url_list)
             else:
                 fp.write('(nil)')
             fp.write('\n\n')
