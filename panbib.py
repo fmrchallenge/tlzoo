@@ -129,12 +129,15 @@ def generate_tlzoo_tree(spc_entries, paper_entries):
             this_papers = [pkey for (pkey, pentry) in paper_entries.items()
                            if key in pentry['spc_lang']]
             for pkey in this_papers:
-                fp.write('* ['+paper_entries[pkey]['title']
+                ptitle = paper_entries[pkey]['title'].replace('`', '\`')
+                fp.write('* ['+ptitle
                          +'](/papers/'+pkey+'.md)'
                          +' ('+str(paper_entries[pkey]['year'])+')\n')
                 
 
     for key, entry in paper_entries.items():
+        # Escape special Markdown symbols
+        entry['title'] = entry['title'].replace('`', '\`')
         with open(os.path.join(papers_dir, key+'.md'), 'w') as fp:
             if entry['type'] == 'conference paper':
                 venue = entry['booktitle']
