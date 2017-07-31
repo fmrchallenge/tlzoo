@@ -40,20 +40,21 @@ def generate_bibtex(entry, key=None):
                  'June', 'July', 'August', 'September', 'October',
                  'November', 'December']
     if entry['type'] == 'conference paper':
-        return ('@inproceedings{{{KEY},\n'
-                '  title = {{{TITLE}}},\n'
-                '  author = {{{AUTHORS}}},\n'
-                '  year = {{{YEAR}}},\n'
-                '  month = {{{MONTH}}},\n'
-                '  booktitle = {{{BOOKTITLE}}},\n'
-                '}}'.format(
-                    KEY=key,
-                    TITLE=entry['title'],
-                    AUTHORS=' AND '.join(entry['authors']),
-                    YEAR=entry['year'],
-                    MONTH=monthtext[entry['month']-1],
-                    BOOKTITLE=entry['booktitle']
-                ))
+        output = ('@inproceedings{{{KEY},\n'
+                  '  title = {{{TITLE}}},\n'
+                  '  author = {{{AUTHORS}}},\n'
+                  '  year = {{{YEAR}}},\n'
+                  '  booktitle = {{{BOOKTITLE}}},'
+                  '\n'.format(
+                      KEY=key,
+                      TITLE=entry['title'],
+                      AUTHORS=' AND '.join(entry['authors']),
+                      YEAR=entry['year'],
+                      BOOKTITLE=entry['booktitle']
+                  ))
+        if 'month' in entry:
+            output += '  month = {{{}}},\n'.format(monthtext[entry['month']-1])
+        return output
     elif entry['type'] == 'article':
         return ('@article{{{KEY},\n'
                 '  title = {{{TITLE}}},\n'
