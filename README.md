@@ -43,7 +43,7 @@ Building the website
 
 Python is required. Everything in known to work on GNU/Linux. Testers and
 contributors for other platforms are welcome! The two primary dependencies are
-[MkDocs]( http://www.mkdocs.org/) and [PyYAML](http://pyyaml.org/wiki/PyYAML).
+[MkDocs](http://www.mkdocs.org/) and [PyYAML](http://pyyaml.org/wiki/PyYAML).
 To install them, try
 
     pip install pyyaml mkdocs
