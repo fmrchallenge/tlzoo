@@ -126,9 +126,10 @@ def generate_tlzoo_tree(spc_entries, paper_entries):
                 fp.write('* '+'* '.join(entry['alias'][1:]))
                 fp.write('\n\n')
 
-            fp.write('### papers\n\n')
+            fp.write('### References (chronological order)\n\n')
             this_papers = [pkey for (pkey, pentry) in paper_entries.items()
                            if key in pentry['spc_lang']]
+            this_papers.sort(key=(lambda x: paper_entries[x]['year']))
             for pkey in this_papers:
                 ptitle = paper_entries[pkey]['title'].replace('`', '\`')
                 fp.write('* ['+ptitle
@@ -141,16 +142,16 @@ def generate_tlzoo_tree(spc_entries, paper_entries):
         entry['title'] = entry['title'].replace('`', '\`')
         with open(os.path.join(papers_dir, key+'.md'), 'w') as fp:
             if entry['type'] == 'conference paper':
-                venue = entry['booktitle']
+                venue = '**venue (conference):** ' + entry['booktitle']
             elif entry['type'] == 'article':
-                venue = entry['journal']
+                venue = '**venue (journal):** ' + entry['journal']
             else:
                 venue = '(UNKNOWN)'
             fp.write('''## {TITLE}
 
 **authors:** {AUTHORS}
 
-**venue:** {VENUE}
+{VENUE}
 
 **date:** {DATE}
 
