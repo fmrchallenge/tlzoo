@@ -132,7 +132,7 @@ def generate_tlzoo_tree(spc_entries, paper_entries):
             this_papers.sort(key=(lambda x: paper_entries[x]['year']))
             for ii, pkey in enumerate(this_papers):
                 ptitle = paper_entries[pkey]['title'].replace('`', '\`')
-                fp.write(str(ii)+'. ['+ptitle
+                fp.write(str(ii+1)+'. ['+ptitle
                          +'](/papers/'+pkey+'.md)'
                          +' ('+str(paper_entries[pkey]['year'])+')\n')
                 
