@@ -126,16 +126,34 @@ def generate_tlzoo_tree(spc_entries, paper_entries):
                 fp.write('* '+'* '.join(entry['alias'][1:]))
                 fp.write('\n\n')
 
-            fp.write('### References (chronological order)\n\n')
+            fp.write('### Summary\n\n')
+            fp.write(entry['summary'] if 'summary' in entry else '(nil)')
+            fp.write('\n\n')
+
             this_papers = [pkey for (pkey, pentry) in paper_entries.items()
                            if key in pentry['spc_lang']]
             this_papers.sort(key=(lambda x: paper_entries[x]['year']))
+
+
+            results = list()
+            firsts = list()
+            for ii, tp in enumerate(this_papers):
+                if paper_entries[tp]['status'] == 'first':
+                    firsts.append('[['+str(ii+1)+']](/papers/'+tp+'.md)')
+            results.append('First defined in '
+                              + ', '.join(firsts))
+
+            # Assume there is at least one known fact
+            fp.write('### Results\n\n')
+            fp.write('* ' + '\n* '.join(results) + '\n\n')
+
+            fp.write('### References (chronological order)\n\n')
             for ii, pkey in enumerate(this_papers):
                 ptitle = paper_entries[pkey]['title'].replace('`', '\`')
                 fp.write(str(ii+1)+'. ['+ptitle
                          +'](/papers/'+pkey+'.md)'
                          +' ('+str(paper_entries[pkey]['year'])+')\n')
-                
+
 
     for key, entry in paper_entries.items():
         # Escape special Markdown symbols
