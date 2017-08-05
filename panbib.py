@@ -54,6 +54,7 @@ def generate_bibtex(entry, key=None):
                   ))
         if 'month' in entry:
             output += '  month = {{{}}},\n'.format(monthtext[entry['month']-1])
+        output += '}\n'
         return output
     elif entry['type'] == 'article':
         return ('@article{{{KEY},\n'
