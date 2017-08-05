@@ -126,7 +126,7 @@ def generate_tlzoo_tree(spc_entries, paper_entries):
                 fp.write('* '+'* '.join(entry['alias'][1:]))
                 fp.write('\n\n')
 
-            fp.write('### Summary\n\n')
+            fp.write('### summary\n\n')
             fp.write(entry['summary'] if 'summary' in entry else '(nil)')
             fp.write('\n\n')
 
@@ -144,10 +144,10 @@ def generate_tlzoo_tree(spc_entries, paper_entries):
                               + ', '.join(firsts))
 
             # Assume there is at least one known fact
-            fp.write('### Results\n\n')
+            fp.write('### results\n\n')
             fp.write('* ' + '\n* '.join(results) + '\n\n')
 
-            fp.write('### References (chronological order)\n\n')
+            fp.write('### references (chronological order)\n\n')
             for ii, pkey in enumerate(this_papers):
                 ptitle = paper_entries[pkey]['title'].replace('`', '\`')
                 fp.write(str(ii+1)+'. ['+ptitle
