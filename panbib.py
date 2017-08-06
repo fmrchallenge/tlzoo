@@ -69,6 +69,17 @@ def generate_bibtex(entry, key=None):
                     YEAR=entry['year'],
                     JOURNAL=entry['journal']
                 ))
+    elif entry['type'] == 'book':
+        return ('@book{{{KEY},\n'
+                '  title = {{{TITLE}}},\n'
+                '  author = {{{AUTHORS}}},\n'
+                '  year = {{{YEAR}}},\n'
+                '}}'.format(
+                    KEY=key,
+                    TITLE=entry['title'],
+                    AUTHORS=' AND '.join(entry['authors']),
+                    YEAR=entry['year']
+                ))
 
 def print_bibtex_list(entries):
     for key, entry in entries.items():
