@@ -42,11 +42,13 @@ Building the website
 --------------------
 
 Python is required. Everything in known to work on GNU/Linux. Testers and
-contributors for other platforms are welcome! The two primary dependencies are
-[MkDocs](http://www.mkdocs.org/) and [PyYAML](http://pyyaml.org/wiki/PyYAML).
+contributors for other platforms are welcome! The primary dependencies are
+[PyYAML](http://pyyaml.org/wiki/PyYAML), [MkDocs](http://www.mkdocs.org/), and
+the [`mdx_math` extension for Python-Markdown](
+https://github.com/mitya57/python-markdown-math).
 To install them, try
 
-    pip install pyyaml mkdocs
+    pip install pyyaml mkdocs python-markdown-math
 
 Now, to build the website content,
 
