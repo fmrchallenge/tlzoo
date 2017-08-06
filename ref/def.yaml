@@ -45,6 +45,10 @@ a9bc80b1-dc04-4113-926d-91a29cd372db:
   alias:
   - Generalized Reactivity(1)
   - generalized Streett[1]
+  summary: GR(1) specifications define 2-player games with transition
+    requirements (safety) and liveness conditions assigned to each player. If
+    the adversary satisfies its liveness conditions, then the controlled player
+    must satify its liveness conditions.
 
 b66e1782-3bab-4e4c-a77f-865b9870afc7:
   name: MTL
