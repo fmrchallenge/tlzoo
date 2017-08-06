@@ -57,3 +57,6 @@ b66e1782-3bab-4e4c-a77f-865b9870afc7:
   name: MTL
   alias:
   - Metric Temporal Logic
+
+7cd1a297-b45d-4a89-ad18-647596bb9da9:
+  name: TLA+
