@@ -1,0 +1,11 @@
+cab20e51-d431-4a80-b1d6-6f39393f8bdb:
+  title: "Specifying Systems: The TLA+ Language and Tools for Hardware and Software Engineers"
+  authors:
+  - Leslie Lamport
+  year: 2002
+  type: book
+  url:
+  - http://lamport.azurewebsites.net/tla/book.html
+  spc_lang:
+  - 7cd1a297-b45d-4a89-ad18-647596bb9da9
+  status: exposition
