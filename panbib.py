@@ -152,12 +152,16 @@ def generate_tlzoo_tree(spc_entries, paper_entries):
             for ii, tp in enumerate(this_papers):
                 if paper_entries[tp]['status'] == 'first':
                     firsts.append('[['+str(ii+1)+']](/papers/'+tp+'.md)')
-            results.append('First defined in '
-                              + ', '.join(firsts))
+            if len(firsts)> 0:
+                results.append('First defined in '
+                               + ', '.join(firsts))
 
             # Assume there is at least one known fact
             fp.write('### results\n\n')
-            fp.write('* ' + '\n* '.join(results) + '\n\n')
+            if len(results) > 0:
+                fp.write('* ' + '\n* '.join(results) + '\n\n')
+            else:
+                fp.write('(nil)\n\n')
 
             fp.write('### references (chronological order)\n\n')
             for ii, pkey in enumerate(this_papers):
