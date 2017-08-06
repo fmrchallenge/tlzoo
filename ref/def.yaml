@@ -50,7 +50,7 @@ a9bc80b1-dc04-4113-926d-91a29cd372db:
     the adversary satisfies its liveness conditions, then the controlled player
     must satify its liveness conditions. In terms of temporal operators, the
     canonical pattern for GR(1) is
-    $$ \bigwedge\square\Diamond \implies \bigwedge\square\Diamond$$ where
+    $$ \bigwedge\square\Diamond \implies \bigwedge\square\Diamond$$
     where the implication has a special interpretation to ensure causal controllers.
 
 b66e1782-3bab-4e4c-a77f-865b9870afc7:
