@@ -29,6 +29,7 @@ f16b4506-42fa-44b3-8d8e-2e76c2bb45e6:
 
 5019e3b1-43ac-477e-be53-4bddd50ad215:
   name: CTL*
+  summary: a branching-time logic
 
 a9bc80b1-dc04-4113-926d-91a29cd372db:
   name: PrSTL
