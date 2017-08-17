@@ -61,3 +61,8 @@ b66e1782-3bab-4e4c-a77f-865b9870afc7:
 
 7cd1a297-b45d-4a89-ad18-647596bb9da9:
   name: TLA+
+
+02a62a45-16e7-4918-b877-5df1f81e08ea:
+  name: TWTL
+  alias:
+  - time window temporal logic
