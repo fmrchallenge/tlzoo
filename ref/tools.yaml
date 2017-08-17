@@ -1,0 +1,15 @@
+b62f4ab9-740d-4e08-9fd8-731a0a589277:
+  name: scheck
+  url:
+  - http://www.tcs.hut.fi/~timo/scheck/
+  spc_lang:
+  - f5885e03-e2e4-41ac-a741-f7fd552e2d7f
+  papers:
+  - 99247baa-184a-4084-bcef-fd65bb527335
+
+10c16585-86ed-42ef-8ea3-7ca13172e100:
+  name: twtl
+  url:
+  - https://github.com/wasserfeder/twtl
+  spc_lang:
+  - 02a62a45-16e7-4918-b877-5df1f81e08ea
