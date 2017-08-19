@@ -20,11 +20,16 @@ def find_db():
 def parse_db(paths):
     paper_entries = dict()
     spc_entries = dict()
+    tool_entries = dict()
 
     for path in paths:
         if os.path.basename(path) == 'def.yaml':
             with open(path) as fp:
                 spc_entries = yaml.load(fp)
+            continue
+        elif os.path.basename(path) == 'tools.yaml':
+            with open(path) as fp:
+                tool_entries = yaml.load(fp)
             continue
         try:
             int(os.path.basename(path).split('.')[0])
@@ -33,7 +38,7 @@ def parse_db(paths):
         with open(path) as fp:
             incoming = yaml.load(fp)
         paper_entries.update(incoming)
-    return spc_entries, paper_entries
+    return spc_entries, paper_entries, tool_entries
 
 def generate_bibtex(entry, key=None):
     monthtext = ['January', 'February', 'March', 'April', 'May',
@@ -86,7 +91,7 @@ def print_bibtex_list(entries):
         print(generate_bibtex(entry, key=key))
         print()  # Blank line
 
-def generate_tlzoo_tree(spc_entries, paper_entries):
+def generate_tlzoo_tree(spc_entries, paper_entries, tool_entries):
     """
 
     Output files are placed under the directory site/docs/
@@ -110,6 +115,15 @@ def generate_tlzoo_tree(spc_entries, paper_entries):
         for key in title_mapping:
             fp.write('  - "{TITLE}": papers/{KEY}.md\n'.format(
                 TITLE=paper_entries[key]['title'],
+                KEY=key
+            ))
+
+        title_mapping = list(spc_entries.keys())
+        title_mapping.sort(key=(lambda x: tool_entries[x]['name']))
+        fp.write('- tools:\n')
+        for key in title_mapping:
+            fp.write('  - "{NAME}": tools/{KEY}.md\n'.format(
+                NAME=paper_entries[key]['name'],
                 KEY=key
             ))
 
@@ -235,12 +249,12 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     db_files = find_db()
-    spc_entries, paper_entries = parse_db(db_files)
+    spc_entries, paper_entries, tool_entries = parse_db(db_files)
 
     target_format = args.out_format.lower()
     if target_format == 'bibtex':
         print_bibtex_list(paper_entries)
     elif target_format == 'tlzoo':
-        generate_tlzoo_tree(spc_entries, paper_entries)
+        generate_tlzoo_tree(spc_entries, paper_entries, tool_entries)
     else:
         pass
