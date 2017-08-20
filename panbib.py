@@ -118,24 +118,27 @@ def generate_tlzoo_tree(spc_entries, paper_entries, tool_entries):
                 KEY=key
             ))
 
-        title_mapping = list(spc_entries.keys())
+        title_mapping = list(tool_entries.keys())
         title_mapping.sort(key=(lambda x: tool_entries[x]['name']))
         fp.write('- tools:\n')
         for key in title_mapping:
             fp.write('  - "{NAME}": tools/{KEY}.md\n'.format(
-                NAME=paper_entries[key]['name'],
+                NAME=tool_entries[key]['name'],
                 KEY=key
             ))
 
     docs_dir = os.path.join('site', 'docs')
     spc_dir = os.path.join(docs_dir, 'spc')
     papers_dir = os.path.join(docs_dir, 'papers')
+    tools_dir = os.path.join(docs_dir, 'tools')
     if not os.path.exists(docs_dir):
         os.mkdir(docs_dir)
     if not os.path.exists(spc_dir):
         os.mkdir(spc_dir)
     if not os.path.exists(papers_dir):
         os.mkdir(papers_dir)
+    if not os.path.exists(tools_dir):
+        os.mkdir(tools_dir)
 
     for key, entry in spc_entries.items():
         with open(os.path.join(spc_dir, key+'.md'), 'w') as fp:
@@ -160,6 +163,10 @@ def generate_tlzoo_tree(spc_entries, paper_entries, tool_entries):
                            if key in pentry['spc_lang']]
             this_papers.sort(key=(lambda x: paper_entries[x]['year']))
 
+            this_tools = [tkey for (tkey, tentry) in tool_entries.items()
+                          if key in tentry['spc_lang']]
+            this_tools.sort(key=(lambda x: tool_entries[x]['name']))
+
 
             results = list()
             firsts = list()
@@ -183,6 +190,11 @@ def generate_tlzoo_tree(spc_entries, paper_entries, tool_entries):
                 fp.write(str(ii+1)+'. ['+ptitle
                          +'](/papers/'+pkey+'.md)'
                          +' ('+str(paper_entries[pkey]['year'])+')\n')
+
+            fp.write('### tools\n\n')
+            for ii, tkey in enumerate(this_tools):
+                fp.write(str(ii+1)+'. ['+tool_entries[tkey]['name']
+                         +'](/tools/'+tkey+'.md)')
 
 
     for key, entry in paper_entries.items():
@@ -239,6 +251,39 @@ def generate_tlzoo_tree(spc_entries, paper_entries, tool_entries):
             fp.write('### BibTeX\n<pre>\n')
             fp.write(generate_bibtex(entry, key))
             fp.write('</pre>\n')
+
+    for key, entry in tool_entries.items():
+        with open(os.path.join(tools_dir, key+'.md'), 'w') as fp:
+            fp.write('## ' + entry['name'] + '\n\n')
+
+            fp.write('### specification languages\n\n')
+            spc_langs = list()
+            for spc_lang in entry['spc_lang']:
+                spc_langs.append('* ['+spc_entries[spc_lang]['name']
+                                 +'](/spc/'+spc_lang+'.md)')
+            fp.writelines(spc_langs)
+            fp.write('\n\n')
+
+            if ('papers' in entry) and len(entry['papers']) > 0:
+                fp.write('### references (chronological order)\n\n')
+                entry['papers'].sort(key=(lambda x: paper_entries[x]['year']))
+                for pkey in entry['papers']:
+                    ptitle = paper_entries[pkey]['title'].replace('`', '\`')
+                    fp.write(str(ii+1)+'. ['+ptitle
+                             +'](/papers/'+pkey+'.md)'
+                             +' ('+str(paper_entries[pkey]['year'])+')\n')
+
+            fp.write('### URL\n\n')
+            url_list = []
+            if ('url' in entry) and len(entry['url']) > 0:
+                url_list.extend(['* <'+url+'>\n' for url in entry['url']])
+            if 'doi' in entry:
+                url_list.append('* <http://dx.doi.org/'+entry['doi']+'> (auto-generated link)\n')
+            if len(url_list) > 0:
+                fp.writelines(url_list)
+            else:
+                fp.write('(nil)')
+            fp.write('\n\n')
 
 
 if __name__ == '__main__':
