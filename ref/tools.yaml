@@ -13,3 +13,10 @@ b62f4ab9-740d-4e08-9fd8-731a0a589277:
   - https://github.com/wasserfeder/twtl
   spc_lang:
   - 02a62a45-16e7-4918-b877-5df1f81e08ea
+
+a253e558-09e9-4cc0-a04e-e79975d43be3:
+  name: CrSyPSTL
+  url:
+  - https://github.com/dsadigh/CrSPrSTL
+  spc_lang:
+  - a9bc80b1-dc04-4113-926d-91a29cd372db
