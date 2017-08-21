@@ -191,10 +191,11 @@ def generate_tlzoo_tree(spc_entries, paper_entries, tool_entries):
                          +'](/papers/'+pkey+'.md)'
                          +' ('+str(paper_entries[pkey]['year'])+')\n')
 
-            fp.write('### tools\n\n')
-            for ii, tkey in enumerate(this_tools):
-                fp.write(str(ii+1)+'. ['+tool_entries[tkey]['name']
-                         +'](/tools/'+tkey+'.md)')
+            if len(this_tools) > 0:
+                fp.write('### tools\n\n')
+                for ii, tkey in enumerate(this_tools):
+                    fp.write(str(ii+1)+'. ['+tool_entries[tkey]['name']
+                             +'](/tools/'+tkey+'.md)')
 
 
     for key, entry in paper_entries.items():
