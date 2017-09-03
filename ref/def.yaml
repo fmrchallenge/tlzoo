@@ -66,3 +66,8 @@ b66e1782-3bab-4e4c-a77f-865b9870afc7:
   name: TWTL
   alias:
   - time window temporal logic
+
+d2067eee-8ce7-4a52-a580-cbb60f8e9784:
+  name: ATL
+  alias:
+  - Alternating-Time Temporal Logic
