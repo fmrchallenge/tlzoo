@@ -71,3 +71,8 @@ d2067eee-8ce7-4a52-a580-cbb60f8e9784:
   name: ATL
   alias:
   - Alternating-Time Temporal Logic
+
+371fcc95-44c9-4ad2-a5d9-0801a839df2c:
+  name: SL
+  alias:
+  - strategy logic
