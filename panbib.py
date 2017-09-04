@@ -242,7 +242,7 @@ def generate_tlzoo_tree(spc_entries, paper_entries, tool_entries):
             if ('url' in entry) and len(entry['url']) > 0:
                 url_list.extend(['* <'+url+'>\n' for url in entry['url']])
             if 'doi' in entry:
-                url_list.append('* <http://dx.doi.org/'+entry['doi']+'> (auto-generated link)\n')
+                url_list.append('* <https://dx.doi.org/'+entry['doi']+'> (auto-generated link)\n')
             if len(url_list) > 0:
                 fp.writelines(url_list)
             else:
