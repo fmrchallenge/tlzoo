@@ -85,6 +85,17 @@ def generate_bibtex(entry, key=None):
                     AUTHORS=' AND '.join(entry['authors']),
                     YEAR=entry['year']
                 ))
+    elif entry['type'] == 'technical report':
+        return ('@techreport{{{KEY},\n'
+                '  title = {{{TITLE}}},\n'
+                '  author = {{{AUTHORS}}},\n'
+                '  year = {{{YEAR}}},\n'
+                '}}'.format(
+                    KEY=key,
+                    TITLE=entry['title'],
+                    AUTHORS=' AND '.join(entry['authors']),
+                    YEAR=entry['year']
+                ))
 
 def print_bibtex_list(entries):
     for key, entry in entries.items():
