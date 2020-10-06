@@ -22,7 +22,7 @@ Organization
 ------------
 
 There are two main parts to this repository: the collection of [YAML](
-http://yaml.org/) files that stores all data about specification languages, and
+https://yaml.org/) files that stores all data about specification languages, and
 scripts for deploying a website that hosts search-able access to these data.
 Building the site is described below. Note that contributing new entries does
 not require capability to build and deploy the website.
@@ -43,7 +43,7 @@ Building the website
 
 Python is required. Everything in known to work on GNU/Linux. Testers and
 contributors for other platforms are welcome! The primary dependencies are
-[PyYAML](http://pyyaml.org/wiki/PyYAML), [MkDocs](http://www.mkdocs.org/), and
+[PyYAML](https://pyyaml.org/wiki/PyYAML), [MkDocs](https://www.mkdocs.org/), and
 the [`mdx_math` extension for Python-Markdown](
 https://github.com/mitya57/python-markdown-math).
 To install them, try
