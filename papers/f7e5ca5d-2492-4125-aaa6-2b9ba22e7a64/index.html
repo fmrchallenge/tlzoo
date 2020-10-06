@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Deciding Full Branching Time Logic - The Specification Language Zoo</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">The Specification Language Zoo</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../CONTRIBUTING/" class="nav-link">contributing</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">specification languages <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../spc/d2067eee-8ce7-4a52-a580-cbb60f8e9784/" class="dropdown-item">ATL</a>
+</li>
+                                    
+<li>
+    <a href="../../spc/4c333632-ea1c-45f9-9fea-1f63a46c0da2/" class="dropdown-item">CTL</a>
+</li>
+                                    
+<li>
+    <a href="../../spc/5019e3b1-43ac-477e-be53-4bddd50ad215/" class="dropdown-item">CTL*</a>
+</li>
+                                    
+<li>
+    <a href="../../spc/44990ab8-4bc2-4025-9187-27905a9895bd/" class="dropdown-item">GR(1)</a>
+</li>
+                                    
+<li>
+    <a href="../../spc/f16b4506-42fa-44b3-8d8e-2e76c2bb45e6/" class="dropdown-item">LTL</a>
+</li>
+                                    
+<li>
+    <a href="../../spc/b66e1782-3bab-4e4c-a77f-865b9870afc7/" class="dropdown-item">MTL</a>
+</li>
+                                    
+<li>
+    <a href="../../spc/943c7e4d-0e60-49e5-8106-de3be1618d35/" class="dropdown-item">PDDL</a>
+</li>
+                                    
+<li>
+    <a href="../../spc/a9bc80b1-dc04-4113-926d-91a29cd372db/" class="dropdown-item">PrSTL</a>
+</li>
+                                    
+<li>
+    <a href="../../spc/371fcc95-44c9-4ad2-a5d9-0801a839df2c/" class="dropdown-item">SL</a>
+</li>
+                                    
+<li>
+    <a href="../../spc/7cd1a297-b45d-4a89-ad18-647596bb9da9/" class="dropdown-item">TLA+</a>
+</li>
+                                    
+<li>
+    <a href="../../spc/02a62a45-16e7-4918-b877-5df1f81e08ea/" class="dropdown-item">TWTL</a>
+</li>
+                                    
+<li>
+    <a href="../../spc/70170676-2a9c-4eb9-a09b-66677bd72c91/" class="dropdown-item">counting LTL</a>
+</li>
+                                    
+<li>
+    <a href="../../spc/f5885e03-e2e4-41ac-a741-f7fd552e2d7f/" class="dropdown-item">scLTL</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">papers <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../97a68691-cd64-4eb8-8b3a-ce2f9f4ce09a/" class="dropdown-item">Alternating-Time Temporal Logic</a>
+</li>
+                                    
+<li>
+    <a href="../46e67ce6-8bbf-42a7-ac98-7a6336874510/" class="dropdown-item">Alternating-Time Temporal Logic</a>
+</li>
+                                    
+<li>
+    <a href="../82c3f106-dd78-4500-aece-b059ff31b3f6/" class="dropdown-item">Bridging the gap between fair simulation and trace inclusion</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active">Deciding Full Branching Time Logic</a>
+</li>
+                                    
+<li>
+    <a href="../99247baa-184a-4084-bcef-fd65bb527335/" class="dropdown-item">Efficient Model Checking of Safety Properties</a>
+</li>
+                                    
+<li>
+    <a href="../24cfb052-d8a8-46ac-bd5d-00817ea36c4e/" class="dropdown-item">PDDL -- The Planning Domain Definition Language</a>
+</li>
+                                    
+<li>
+    <a href="../d2b29caf-3eb1-4e5b-88be-fe16d929d68a/" class="dropdown-item">Provably-Correct Coordination of Large Collections of Agents with Counting Temporal Logic Constraints</a>
+</li>
+                                    
+<li>
+    <a href="../e92e38ca-af0e-400d-8137-c26068840898/" class="dropdown-item">Robustness of temporal logic specifications for continuous-time signals</a>
+</li>
+                                    
+<li>
+    <a href="../d6a38902-18ae-4de1-bcfa-ce6af34a62f3/" class="dropdown-item">Safe Control under Uncertainty with Probabilistic Signal Temporal Logic</a>
+</li>
+                                    
+<li>
+    <a href="../96911b80-f250-4fcf-9e19-9be1e624bec8/" class="dropdown-item">Specifying Real-Time Properties with Metric Temporal Logic</a>
+</li>
+                                    
+<li>
+    <a href="../cab20e51-d431-4a80-b1d6-6f39393f8bdb/" class="dropdown-item">Specifying Systems: The TLA+ Language and Tools for Hardware and Software Engineers</a>
+</li>
+                                    
+<li>
+    <a href="../7ca9eb32-ce6e-4650-bfba-3622a4ceb351/" class="dropdown-item">Synthesis of Reactive(1) designs</a>
+</li>
+                                    
+<li>
+    <a href="../7621192f-428b-455e-8b82-f06afaa6e4cf/" class="dropdown-item">The Complexity of Propositional Linear Temporal Logics</a>
+</li>
+                                    
+<li>
+    <a href="../f95d7178-54c0-4f45-b77e-a5b9948ca325/" class="dropdown-item">The temporal logic of programs</a>
+</li>
+                                    
+<li>
+    <a href="../98c098da-0dbb-493e-8053-54cf9e359024/" class="dropdown-item">Time window temporal logic</a>
+</li>
+                                    
+<li>
+    <a href="../1f68612f-53c1-4265-b7cb-f428a04ba859/" class="dropdown-item">``Sometimes'' and ``Not Never'' Revisited: On Branching versus Linear Time Temporal Logic</a>
+</li>
+                                    
+<li>
+    <a href="../2c241291-48c0-4597-b128-31fd2fa92950/" class="dropdown-item">``Sometimes'' and ``Not Never'' Revisited: On Branching versus Linear Time Temporal Logic (preliminary report)</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">tools <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../tools/a253e558-09e9-4cc0-a04e-e79975d43be3/" class="dropdown-item">CrSyPSTL</a>
+</li>
+                                    
+<li>
+    <a href="../../tools/b62f4ab9-740d-4e08-9fd8-731a0a589277/" class="dropdown-item">scheck</a>
+</li>
+                                    
+<li>
+    <a href="../../tools/10c16585-86ed-42ef-8ea3-7ca13172e100/" class="dropdown-item">twtl</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../82c3f106-dd78-4500-aece-b059ff31b3f6/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../99247baa-184a-4084-bcef-fd65bb527335/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="2"><a href="#deciding-full-branching-time-logic" class="nav-link">Deciding Full Branching Time Logic</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h2 id="deciding-full-branching-time-logic">Deciding Full Branching Time Logic</h2>
+<p><strong>authors:</strong> E. Allen Emerson, A. Prasad Sistla</p>
+<p><strong>venue (journal):</strong> Information and Control</p>
+<p><strong>date:</strong> 1984</p>
+<h3 id="specification-languages">specification languages</h3>
+<ul>
+<li><a href="/spc/5019e3b1-43ac-477e-be53-4bddd50ad215">CTL*</a></li>
+</ul>
+<h3 id="keywords">keywords</h3>
+<p>(nil)</p>
+<h3 id="url">URL</h3>
+<ul>
+<li><a href="https://dx.doi.org/10.1016/S0019-9958(84)80047-9">https://dx.doi.org/10.1016/S0019-9958(84)80047-9</a> (auto-generated link)</li>
+</ul>
+<h3 id="bibtex">BibTeX</h3>
+<p><pre>
+@article{f7e5ca5d-2492-4125-aaa6-2b9ba22e7a64,
+  title = {Deciding Full Branching Time Logic},
+  author = {E. Allen Emerson AND A. Prasad Sistla},
+  year = {1984},
+  journal = {Information and Control},
+}</pre></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+<a rel="license" href="https://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License Attribution 4.0 International License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a> | <a href="https://github.com/fmrchallenge/tlzoo">This website is open source.</a>
+
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
