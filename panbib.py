@@ -183,7 +183,7 @@ def generate_tlzoo_tree(spc_entries, paper_entries, tool_entries):
             firsts = list()
             for ii, tp in enumerate(this_papers):
                 if paper_entries[tp]['status'] == 'first':
-                    firsts.append('[['+str(ii+1)+']](/papers/'+tp+')')
+                    firsts.append('[['+str(ii+1)+']](../../papers/'+tp+')')
             if len(firsts)> 0:
                 results.append('First defined in '
                                + ', '.join(firsts))
@@ -199,14 +199,14 @@ def generate_tlzoo_tree(spc_entries, paper_entries, tool_entries):
             for ii, pkey in enumerate(this_papers):
                 ptitle = paper_entries[pkey]['title'].replace('`', '\`')
                 fp.write(str(ii+1)+'. ['+ptitle
-                         +'](/papers/'+pkey+')'
+                         +'](../../papers/'+pkey+')'
                          +' ('+str(paper_entries[pkey]['year'])+')\n')
 
             if len(this_tools) > 0:
                 fp.write('### tools\n\n')
                 for ii, tkey in enumerate(this_tools):
                     fp.write(str(ii+1)+'. ['+tool_entries[tkey]['name']
-                             +'](/tools/'+tkey+')')
+                             +'](../../tools/'+tkey+')')
 
 
     for key, entry in paper_entries.items():
@@ -237,7 +237,7 @@ def generate_tlzoo_tree(spc_entries, paper_entries, tool_entries):
             spc_langs = list()
             for spc_lang in entry['spc_lang']:
                 spc_langs.append('* ['+spc_entries[spc_lang]['name']
-                                 +'](/spc/'+spc_lang+')')
+                                 +'](../../spc/'+spc_lang+')')
             fp.writelines(spc_langs)
             fp.write('\n\n')
 
@@ -272,7 +272,7 @@ def generate_tlzoo_tree(spc_entries, paper_entries, tool_entries):
             spc_langs = list()
             for spc_lang in entry['spc_lang']:
                 spc_langs.append('* ['+spc_entries[spc_lang]['name']
-                                 +'](/spc/'+spc_lang+')')
+                                 +'](../../spc/'+spc_lang+')')
             fp.writelines(spc_langs)
             fp.write('\n\n')
 
@@ -282,7 +282,7 @@ def generate_tlzoo_tree(spc_entries, paper_entries, tool_entries):
                 for pkey in entry['papers']:
                     ptitle = paper_entries[pkey]['title'].replace('`', '\`')
                     fp.write(str(ii+1)+'. ['+ptitle
-                             +'](/papers/'+pkey+')'
+                             +'](../../papers/'+pkey+')'
                              +' ('+str(paper_entries[pkey]['year'])+')\n')
 
             fp.write('### URL\n\n')
