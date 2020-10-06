@@ -1,7 +1,8 @@
 site_name: The Specification Language Zoo
 
-theme: mkdocs
-theme_dir: tlzoo_theme
+theme:
+  name: mkdocs
+  custom_dir: tlzoo_theme
 
 markdown_extensions:
   - mdx_math:
@@ -9,6 +10,6 @@ markdown_extensions:
 
 extra_javascript: ['https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML']
 
-pages:
+nav:
 - home: index.md
 - contributing: CONTRIBUTING.md
