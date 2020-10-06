@@ -1,7 +1,7 @@
 The Specification Language Zoo
 ------------------------------
 
-The site is deployed at <https://tlzoo.party>
+The site is deployed at <https://api.fmrchallenge.org/tlzoo/>
 
 The ambition of this repository is to concisely document all specification
 languages and their relationships as presented in published papers. It aspires
